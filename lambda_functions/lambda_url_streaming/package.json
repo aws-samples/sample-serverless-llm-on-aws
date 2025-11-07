@@ -1,0 +1,10 @@
+{
+  "name": "lambda-url-streaming",
+  "version": "1.0.0",
+  "description": "Lambda function for URL streaming with Bedrock",
+  "main": "index.js",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.450.0",
+    "aws-jwt-verify": "^4.0.1"
+  }
+} 

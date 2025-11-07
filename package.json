@@ -1,0 +1,12 @@
+{
+  "name": "serverless-llm-streaming-cdk",
+  "version": "1.0.0",
+  "description": "Python CDK app for serverless LLM streaming with Lambda URL, WebSocket API, and AppSync",
+  "scripts": {
+    "install-deps": "pip install -r requirements-cdk.txt",
+    "install-lambda-deps": "cd lambda_functions/lambda_url_streaming && npm install",
+    "setup": "npm run install-deps && npm run install-lambda-deps",
+    "deploy": "cdk deploy --all",
+    "destroy": "cdk destroy --all"
+  }
+} 

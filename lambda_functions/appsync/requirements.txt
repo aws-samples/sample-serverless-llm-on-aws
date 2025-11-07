@@ -1,0 +1,60 @@
+# AWS AppSync AI Streaming Lambda Function Dependencies
+#
+# This requirements.txt file specifies the AWS SDK dependencies needed for 
+# AppSync GraphQL resolvers that handle real-time AI streaming functionality.
+#
+# DEPENDENCY RATIONALE FOR APPSYNC ARCHITECTURE:
+#
+# Unlike WebSocket API or Lambda URL patterns, AppSync GraphQL resolvers primarily
+# use the AWS SDK for service-to-service communication. The core dependencies are:
+#
+# 1. boto3 - AWS SDK for Python (High-level interface)
+#    - Used for Lambda-to-Lambda invocation (async worker pattern)
+#    - Used for Bedrock AI model streaming invocation
+#    - Provides resource-level abstractions for AWS services
+#    - Handles credential management and service discovery
+#    - Required for all AWS service interactions in this architecture
+#
+# 2. botocore - AWS SDK Core Library (Low-level interface)
+#    - Required by boto3 as the underlying transport layer
+#    - Provides SigV4 authentication for service-to-service calls
+#    - Handles AWS request signing for AppSync GraphQL mutations
+#    - Manages retry logic and error handling for AWS API calls
+#    - Essential for programmatic GraphQL mutation execution from Lambda
+#
+# APPSYNC-SPECIFIC CONSIDERATIONS:
+#
+# No JWT Libraries Needed:
+# - AppSync handles authentication via Cognito User Pools directly
+# - GraphQL resolvers receive pre-authenticated context from AppSync
+# - No manual JWT validation required in resolver functions
+#
+# No WebSocket Libraries Needed:
+# - AppSync manages WebSocket connections automatically
+# - Real-time subscriptions handled by AppSync infrastructure
+# - No manual connection management required
+#
+# Service-to-Service Authentication:
+# - Uses IAM roles and SigV4 signing via botocore
+# - Lambda execution roles provide necessary permissions
+# - No manual credential management in application code
+#
+# ARCHITECTURE PATTERN SUMMARY:
+#
+# This AppSync streaming architecture demonstrates:
+# - GraphQL mutations and subscriptions for real-time data
+# - Asynchronous Lambda invocation for long-running processes  
+# - SigV4 authentication for secure service-to-service communication
+# - Bedrock integration for AI model streaming
+# - Session-based real-time broadcasting to connected clients
+#
+# VERSION CONSTRAINTS:
+# - boto3>=1.28.0: Ensures Bedrock streaming support and latest features
+# - botocore>=1.31.0: Provides updated SigV4 auth and retry mechanisms
+#
+# Lambda Layer Usage:
+# These dependencies are packaged into a Lambda Layer via CDK's PythonLayerVersion
+# construct for efficient reuse across multiple AppSync resolver functions.
+
+boto3>=1.28.0     # AWS SDK for service integrations (Bedrock, Lambda invocation)
+botocore>=1.31.0  # Core AWS SDK library (SigV4 auth, HTTP transport) 

@@ -1,0 +1,13 @@
+.venv/
+.env
+.DS_Store
+.idea/
+.vscode/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+.coverage.*
+cdk.out/
+node_modules

@@ -1,0 +1,39 @@
+type StreamResponse {
+  sessionId: String!
+  status: String!
+  message: String
+  timestamp: String!
+  error: String
+}
+
+type TokenEvent @aws_iam @aws_user_pool {
+  sessionId: String!
+  token: String!
+  isComplete: Boolean!
+  timestamp: String!
+}
+
+type Mutation {
+  startStream(prompt: String!): StreamResponse!
+    @aws_user_pool
+  publishToken(sessionId: String!, token: String!, isComplete: Boolean!): TokenEvent!
+    @aws_iam
+}
+
+type Subscription {
+  onTokenReceived(sessionId: String!): TokenEvent
+    @aws_subscribe(mutations: ["publishToken"])
+    @aws_user_pool
+}
+
+# Query type is required but not used in this streaming demo
+type Query {
+  # Placeholder query - not used in streaming demo
+  getStreamStatus(sessionId: String!): StreamResponse
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+} 

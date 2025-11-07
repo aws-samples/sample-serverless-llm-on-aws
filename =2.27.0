@@ -1,0 +1,27 @@
+Collecting cdk-nag
+  Downloading cdk_nag-2.37.19-py3-none-any.whl.metadata (23 kB)
+Requirement already satisfied: aws-cdk-lib<3.0.0,>=2.176.0 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from cdk-nag) (2.210.0)
+Requirement already satisfied: constructs<11.0.0,>=10.0.5 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from cdk-nag) (10.4.2)
+Collecting jsii<2.0.0,>=1.114.1 (from cdk-nag)
+  Downloading jsii-1.114.1-py3-none-any.whl.metadata (79 kB)
+Requirement already satisfied: publication>=0.0.3 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from cdk-nag) (0.0.3)
+Requirement already satisfied: typeguard<4.3.0,>=2.13.3 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from cdk-nag) (2.13.3)
+Requirement already satisfied: aws-cdk.asset-awscli-v1==2.2.242 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from aws-cdk-lib<3.0.0,>=2.176.0->cdk-nag) (2.2.242)
+Requirement already satisfied: aws-cdk.asset-node-proxy-agent-v6<3.0.0,>=2.1.0 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from aws-cdk-lib<3.0.0,>=2.176.0->cdk-nag) (2.1.0)
+Requirement already satisfied: aws-cdk.cloud-assembly-schema<49.0.0,>=48.2.0 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from aws-cdk-lib<3.0.0,>=2.176.0->cdk-nag) (48.3.0)
+Requirement already satisfied: attrs<26.0,>=21.2 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from jsii<2.0.0,>=1.114.1->cdk-nag) (25.3.0)
+Requirement already satisfied: cattrs<25.3,>=1.8 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from jsii<2.0.0,>=1.114.1->cdk-nag) (25.1.1)
+Requirement already satisfied: importlib_resources>=5.2.0 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from jsii<2.0.0,>=1.114.1->cdk-nag) (6.5.2)
+Requirement already satisfied: python-dateutil in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from jsii<2.0.0,>=1.114.1->cdk-nag) (2.9.0.post0)
+Requirement already satisfied: typing_extensions<5.0,>=3.8 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from jsii<2.0.0,>=1.114.1->cdk-nag) (4.14.1)
+Requirement already satisfied: six>=1.5 in /Users/kyunshim/Dev/aws/serverless-llm-on-aws/.venv/lib/python3.12/site-packages (from python-dateutil->jsii<2.0.0,>=1.114.1->cdk-nag) (1.17.0)
+Downloading cdk_nag-2.37.19-py3-none-any.whl (755 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 755.3/755.3 kB 27.4 MB/s eta 0:00:00
+Downloading jsii-1.114.1-py3-none-any.whl (601 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 601.8/601.8 kB 24.0 MB/s eta 0:00:00
+Installing collected packages: jsii, cdk-nag
+  Attempting uninstall: jsii
+    Found existing installation: jsii 1.113.0
+    Uninstalling jsii-1.113.0:
+      Successfully uninstalled jsii-1.113.0
+Successfully installed cdk-nag-2.37.19 jsii-1.114.1
