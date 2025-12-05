@@ -1,6 +1,6 @@
 # Serverless Strategies for Streaming LLM Responses
 
-This repository provides sample code for the blog post **"Serverless Strategies for Streaming LLM Responses"**. It demonstrates three serverless architectures for implementing real-time streaming from Large Language Models (LLMs) on AWS.
+This repository provides sample code for the AWS blog post [**"Serverless Strategies for Streaming LLM Responses"**](https://aws.amazon.com/blogs/compute/serverless-strategies-for-streaming-llm-responses/). It demonstrates three serverless architectures for implementing real-time streaming from Large Language Models (LLMs) on AWS.
 
 The focus is on demonstrating **true real-time streaming**, where tokens are delivered to clients as they are generated from Amazon Bedrock, not just simulated client-side streaming of a complete response.
 
